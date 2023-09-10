@@ -53,7 +53,7 @@ export default function HouseFormContent({
       <div className='flex flex-col space-y-4'>
         <div>
           <FormLabel className='font-semibold text-base'>
-            घरको नाप <span className='text-sm font-normal'>(फिटमा)</span>
+            घरको नाप <span className='text-sm font-normal'>(वर्ग फिटमा)</span>
           </FormLabel>
           <div className='flex items-start gap-6 mt-2'>
             <FormField
