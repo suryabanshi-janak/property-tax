@@ -1,0 +1,1 @@
+export const SQ_FEET_TO_DHUR_CONVERSION_RATE = 182.25;
