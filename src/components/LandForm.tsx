@@ -37,9 +37,7 @@ export interface TaxData {
 const formSchema = z.object({
   bigha: z.string(),
   katha: z.string(),
-  dhur: z.string().min(1, {
-    message: 'आवश्यक',
-  }),
+  dhur: z.string(),
   landType: z.string().min(1, {
     message: 'कृप्या कुनै एक क्षेत्र छान्नुहोस्',
   }),
@@ -72,6 +70,7 @@ export function LandForm() {
   function onSubmit(values: FormData) {
     const taxes = calculateTotalTax(values);
     setTaxData(taxes);
+    form.reset();
     setOpen(true);
   }
 
@@ -165,6 +164,7 @@ export function LandForm() {
                         </FormLabel>
                         <FormControl>
                           <Select
+                            {...field}
                             onValueChange={field.onChange}
                             defaultValue={field.value}
                           >
@@ -294,6 +294,7 @@ export function LandForm() {
                         </FormLabel>
                         <FormControl>
                           <Select
+                            {...field}
                             onValueChange={field.onChange}
                             defaultValue={field.value}
                             disabled={form.getValues('isLandEmpy')}
