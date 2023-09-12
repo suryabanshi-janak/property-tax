@@ -1,3 +1,4 @@
+import { TaxData } from '@/components/LandForm';
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -20,4 +21,11 @@ export function calculateTotalDhur({
   if (bigha) totalDhur = totalDhur + +bigha * 20 * 20;
 
   return totalDhur;
+}
+
+export function calculateTotalTax(data: TaxData | undefined) {
+  let total = 0;
+  if (data?.landTax) total += data?.landTax;
+  if (data?.houseTax) total += data?.houseTax;
+  return total;
 }

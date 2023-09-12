@@ -1,6 +1,13 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import { Separator } from '@/components/ui/separator';
+
+import { calculateTotalTax } from '@/lib/utils';
 import { TaxData } from './LandForm';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
-import { Separator } from './ui/separator';
 
 interface Props {
   open: boolean;
@@ -17,7 +24,7 @@ export default function TaxResultDialog({ open, onClose, data }: Props) {
         </DialogHeader>
 
         <div>
-          <div className='w-full flex items-center justify-between mt-4'>
+          <div className='flex items-center justify-between w-full mt-4'>
             <p>जग्गाको कर</p>
             <h2 className='font-semibold text-lg text-black min-w-[80px]'>
               रु. {data?.landTax}
@@ -26,7 +33,7 @@ export default function TaxResultDialog({ open, onClose, data }: Props) {
           {data?.houseTax ? (
             <>
               <Separator className='my-4' />
-              <div className='w-full flex items-center justify-between'>
+              <div className='flex items-center justify-between w-full'>
                 <p>घरको कर</p>
                 <h2 className='font-semibold text-lg text-black min-w-[80px]'>
                   रु. {data?.houseTax}
@@ -34,6 +41,13 @@ export default function TaxResultDialog({ open, onClose, data }: Props) {
               </div>
             </>
           ) : null}
+          <Separator className='my-4' />
+          <div className='flex items-center justify-between w-full mt-4'>
+            <p>जम्मा कर</p>
+            <h2 className='font-semibold text-lg text-black min-w-[80px]'>
+              रु. {calculateTotalTax(data)}
+            </h2>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
