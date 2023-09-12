@@ -27,5 +27,5 @@ export function calculateTotalTax(data: TaxData | undefined) {
   let total = 0;
   if (data?.landTax) total += data?.landTax;
   if (data?.houseTax) total += data?.houseTax;
-  return total;
+  return total.toFixed(2);
 }
