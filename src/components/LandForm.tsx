@@ -20,6 +20,8 @@ export interface TaxData {
 
 export function LandForm() {
   const [open, setOpen] = React.useState<boolean>(false);
+  const [selectedFormData, setSelectedFormData] =
+    React.useState<FormRequestData>();
   const [taxData, setTaxData] = React.useState<TaxData>();
 
   const form = useForm<FormRequestData>({
@@ -40,7 +42,8 @@ export function LandForm() {
   function onSubmit(values: FormRequestData) {
     const taxes = calculateTotalTax(values);
     setTaxData(taxes);
-    form.reset();
+    setSelectedFormData(values);
+    // form.reset();
     setOpen(true);
   }
 
@@ -63,6 +66,8 @@ export function LandForm() {
         open={open}
         onClose={() => setOpen(false)}
         data={taxData}
+        formData={selectedFormData}
+        resetFormData={() => setSelectedFormData(undefined)}
       />
     </>
   );
