@@ -40,7 +40,7 @@ export default function HouseFormContent({
                   onCheckedChange={field.onChange}
                 />
               </FormControl>
-              <h4 className='font-semibold text-sm'>खाली जग्गा</h4>
+              <h4 className='text-sm font-semibold'>खाली जग्गा</h4>
             </div>
           </FormItem>
         )}
@@ -52,7 +52,7 @@ export default function HouseFormContent({
 
       <div className='flex flex-col space-y-4'>
         <div>
-          <FormLabel className='font-semibold text-base'>
+          <FormLabel className='text-base font-semibold'>
             घरको नाप <span className='text-sm font-normal'>(वर्ग फिटमा)</span>
           </FormLabel>
           <div className='flex items-start gap-6 mt-2'>
@@ -64,11 +64,9 @@ export default function HouseFormContent({
                   <div className='flex items-center gap-2'>
                     <FormControl>
                       <Input
-                        placeholder='00'
                         {...field}
+                        placeholder='00'
                         className='w-24'
-                        type='number'
-                        min={0}
                         disabled={form.getValues('isLandEmpy')}
                       />
                     </FormControl>
@@ -85,11 +83,9 @@ export default function HouseFormContent({
                   <div className='flex items-center gap-2'>
                     <FormControl>
                       <Input
-                        placeholder='00'
                         {...field}
+                        placeholder='00'
                         className='w-24'
-                        type='number'
-                        min={0}
                         disabled={form.getValues('isLandEmpy')}
                       />
                     </FormControl>
@@ -106,7 +102,7 @@ export default function HouseFormContent({
           name='houseStory'
           render={({ field }) => (
             <FormItem>
-              <FormLabel className='font-semibold text-base'>
+              <FormLabel className='text-base font-semibold'>
                 घरको तल्ला
               </FormLabel>
               <FormControl>
@@ -129,7 +125,7 @@ export default function HouseFormContent({
           name='houseType'
           render={({ field }) => (
             <FormItem>
-              <FormLabel className='font-semibold text-base'>
+              <FormLabel className='text-base font-semibold'>
                 घरको किसिम
               </FormLabel>
               <FormControl>

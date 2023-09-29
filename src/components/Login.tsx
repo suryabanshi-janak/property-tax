@@ -87,7 +87,10 @@ export function Login({ setToken }: { setToken: (token: string) => void }) {
                 )}
               />
 
-              <Button type='submit' className='w-full'>
+              <Button
+                type='submit'
+                className='w-full bg-blue-500 hover:bg-blue-600'
+              >
                 Continue
               </Button>
             </form>

@@ -33,7 +33,7 @@ export default function LandFormContent({
       </CardHeader>
       <div className='flex flex-col space-y-4'>
         <div>
-          <FormLabel className='font-semibold text-base'>जग्गा</FormLabel>
+          <FormLabel className='text-base font-semibold'>जग्गा</FormLabel>
           <div className='flex items-start gap-8 mt-2'>
             <FormField
               control={form.control}
@@ -104,7 +104,7 @@ export default function LandFormContent({
           name='landType'
           render={({ field }) => (
             <FormItem>
-              <FormLabel className='font-semibold text-base'>क्षेत्र</FormLabel>
+              <FormLabel className='text-base font-semibold'>क्षेत्र</FormLabel>
               <FormControl>
                 <Select
                   {...field}

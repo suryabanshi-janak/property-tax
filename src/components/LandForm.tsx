@@ -43,8 +43,11 @@ export function LandForm() {
     const taxes = calculateTotalTax(values);
     setTaxData(taxes);
     setSelectedFormData(values);
-    // form.reset();
     setOpen(true);
+  }
+
+  function onReset() {
+    form.reset();
   }
 
   return (
@@ -56,7 +59,22 @@ export function LandForm() {
               <LandFormContent form={form} />
               <HouseFormContent form={form} />
 
-              <Button type='submit'>हिसाब गर्नुहोस</Button>
+              <div className='flex justify-between'>
+                <Button
+                  type='submit'
+                  className='font-semibold bg-emerald-400 hover:bg-emerald-500'
+                >
+                  हिसाब गर्नुहोस
+                </Button>
+
+                <Button
+                  type='button'
+                  className='font-semibold bg-sky-400 hover:bg-sky-500'
+                  onClick={onReset}
+                >
+                  रिसेट
+                </Button>
+              </div>
             </form>
           </Form>
         </CardContent>
@@ -64,7 +82,10 @@ export function LandForm() {
 
       <TaxResultDialog
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={() => {
+          setOpen(false);
+          form.reset();
+        }}
         data={taxData}
         formData={selectedFormData}
         resetFormData={() => setSelectedFormData(undefined)}
