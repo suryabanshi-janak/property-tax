@@ -62,7 +62,8 @@ export const calculateLandTax = ({
 
   const totalValuation = occupiedLandValuation + houseValuation;
 
-  const taxableAmount = totalValuation * 0.8; // 80%
+  // const taxableAmount = totalValuation * 0.8; // 80%
+  const taxableAmount = totalValuation;
 
   const taxAmount = findTaxAmount(taxableAmount);
 
@@ -81,7 +82,8 @@ export const taxForTenDhurOrLess = (
   });
 
   const totalValuation = landValuation + houseValuation;
-  const taxableAmount = totalValuation * 0.8; // 80%
+  // const taxableAmount = totalValuation * 0.8; // 80%
+  const taxableAmount = totalValuation;
 
   return findTaxAmount(taxableAmount);
 };
